@@ -28,7 +28,7 @@ cam2_image = "cam2_image.jpg"
 cam1_count = 5
 cam2_count = 0
 cid = 0
-cam_image_folder = "cams"
+cam_image_folder = "./cams"
 signal = 2
 time = 15
 s1_count = 0
@@ -72,8 +72,8 @@ def upload():
         image_bytes = base64.b64decode(image_data)
 
         # Save the image
-        with open(image_path, "wb") as img_file:
-            img_file.write(image_bytes)
+        # with open(image_path, "wb") as img_file:
+        #     img_file.write(image_bytes)
         with open(cam_image_path, "wb") as img_file:
             img_file.write(image_bytes)
 
@@ -256,9 +256,9 @@ def split_images():
 
         # Save the images
         left_half.save(os.path.join(split_folder, f"cam{i}_left_half.jpg"))
-        left_half.save(os.path.join(UPLOAD_FOLDER, f"cam{i}_left_half {timestamp}.jpg"))
+        # left_half.save(os.path.join(UPLOAD_FOLDER, f"cam{i}_left_half {timestamp}.jpg"))
         right_half.save(os.path.join(split_folder, f"cam{i}_right_half.jpg"))
-        left_half.save(os.path.join(UPLOAD_FOLDER, f"cam{i}_right_half {timestamp}.jpg"))
+        # left_half.save(os.path.join(UPLOAD_FOLDER, f"cam{i}_right_half {timestamp}.jpg"))
 
 
 if __name__ == '__main__':
